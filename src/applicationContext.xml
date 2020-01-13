@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+      <bean id="userDao" class="com.mutong.ioc.UserDapImpl"></bean>
+
+      <!--构造器方式注入,只要设置了class属性,就会构造注入-->
+      <bean id="User1" class="com.mutong.bean.User">
+            <!--set方式注入,使用property属性-->
+            <property name="username" value="jinggengchen"></property>
+            <property name="password" value="123456"></property>
+      </bean>
+      <!--factory-method属性用于设置静态工厂注入,前提条件是该静态方法是非void的,必须有返回值,而且不能强制类型转换-->
+      <bean id="User2" class="com.mutong.bean.User" factory-method="test1"></bean>
+      <!--值注入-->
+      <bean id="User3" class="com.mutong.bean.User">
+           <property name="username" value="李思远"></property>
+            <property name="password" value="123456"></property>
+            <property name="list">
+                  <list>
+                        <value>"123"</value>
+                        <value>"456"</value>
+                  </list>
+            </property>
+      </bean>
+      <!--构造注入-->
+      <bean id="User4" class="com.mutong.bean.User">
+            <constructor-arg index="0" value="guojijun"></constructor-arg>
+            <constructor-arg index="1" value="123456"></constructor-arg>
+            <constructor-arg index="2">
+                  <list>
+                        <value>"123"</value>
+                        <value>"456"</value>
+                  </list>
+            </constructor-arg>
+      </bean>
+</beans>
