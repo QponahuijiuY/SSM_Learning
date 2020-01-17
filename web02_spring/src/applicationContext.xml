@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+      <context:component-scan base-package="com.mutong.bean"></context:component-scan>
+      <!--构造器方式注入,只要设置了class属性,那么默认的构造方法就会注入-->
+      <!--<bean id="User1" class="com.User">-->
+            <!--set方式注入,使用property属性-->
+            <!--<property name="username" value="jinggengchen"></property>-->
+            <!--<property name="password" value="123456"></property>-->
+
+            <!--ref是引用类型注入,指示了引入的连接-->
+            <!--<property name="student" ref="student"></property>-->
+      <!--</bean>-->
+      <!--<bean name="student1" class="com.Student">-->
+            <!--<property name="id" value="2017006161"></property>-->
+            <!--<property name="dep" value="软件工程"></property>-->
+      <!--</bean>-->
+      <!--<bean id="student" class="com.Student">-->
+            <!--<constructor-arg index="0" value="2017006161"></constructor-arg>-->
+            <!--<constructor-arg index="1" value="软件工程"></constructor-arg>-->
+      <!--</bean>-->
+
+      <!--复杂类型注入-->
+
+      <!--<bean id="collection" class="com.Collection">-->
+            <!--<property name="array">-->
+                  <!--<array>-->
+                        <!--<value>123</value>-->
+                        <!--<value>456</value>-->
+                  <!--</array>-->
+                  <!--同时也可以使用ref引用-->
+            <!--</property>-->
+            <!--<property name="list">-->
+                  <!--<list>-->
+                        <!--<value>123</value>-->
+                        <!--<value>456</value>-->
+                  <!--</list>-->
+            <!--</property>-->
+            <!--<property name="set">-->
+                  <!--<set>-->
+                        <!--<value>123</value>-->
+                        <!--<value>456</value>-->
+                  <!--</set>-->
+            <!--</property>-->
+
+            <!--<property name="map">-->
+                  <!--<map>-->
+                        <!--<entry key="username" value="jinggengchen"></entry>-->
+                        <!--<entry key="password" value="123456"></entry>-->
+                        <!--map也可以使用key-ref来进行引用-->
+                        <!--<entry key-ref="User1" value=""></entry>-->
+                  <!--</map>-->
+            <!--</property>-->
+
+            <!--<property name="properties">-->
+                  <!--<props>-->
+                        <!--<prop key="name">123</prop>-->
+                        <!--<prop key="age">15</prop>-->
+                  <!--</props>-->
+            <!--</property>-->
+      <!--</bean>-->
+</beans>

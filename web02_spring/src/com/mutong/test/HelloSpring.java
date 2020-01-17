@@ -31,14 +31,28 @@ public class HelloSpring {
         //xml文件已经为我们设置好了值,我们直接得到bean即可
         User user1 = (User) applicationContext.getBean("User1");
         System.out.println(user1);
-
+//        Student student = (Student) applicationContext.getBean("student");
+//        System.out.println(student);
 
         //System.out.println(applicationContext.getBean("User2"));
 
 
-        System.out.println(applicationContext.getBean("User3"));
+        //System.out.println(applicationContext.getBean("User3"));
 
 //        System.out.println(applicationContext.getBean("User4"));
 
+    }
+    @Test
+    public void Test3(){
+        ApplicationContext applicationContext
+                 = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        System.out.println(applicationContext.getBean("collection"));
+    }
+
+    @Test
+    public void Test4(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        System.out.println(applicationContext.getBean("user1"));
     }
 }
